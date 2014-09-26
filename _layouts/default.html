@@ -1,19 +1,95 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  {% include head.html %}
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <script type="text/javascript" src="{{ site.baseurl }}/js/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+    var flag = false;
+    $(document).ready(function() {
+      $('#archive, .archive-content').click(function(){
+        $('.archive-content').toggle('fast');
+
+        if(flag == false) {
+        	$('.wrapper').stop().animate({
+        		'marginLeft' : '+=30em'
+        	});
+        	flag = true;
+        } else {
+        	$('.wrapper').stop().animate({
+        		'marginLeft' : '-=30em'
+        	});
+        	flag = false;
+        }
+       });
+
+      $('.wrapper').click(function(){
+        $('.archive-content').toggle('fast');
+
+        if(flag == true) {
+        	$('.wrapper').stop().animate({
+        		'marginLeft' : '-=30em'
+        	});
+        	flag = false;
+        }
+       });
+
+      });
+
+    $(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+    </script>	
+
+    </head>
 
   <body>
 
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
+    
         {{ content }}
+     
+
+	<div class="sidebar">
+      <div id="sidebar-wrapper">
+        
+        <a href="/blog/" id="home">
+          <div class="nav" >
+            <i class="icon-home"></i>
+          </div>
+        </a>  
+             
+        <div id="archive">
+          <div class="nav" >
+            <i class="icon-archive"></i>
+          </div>
+        </div>
+
+        <div id="name">
+            <p>古<br>少<br>亭</p>
+        </div>
       </div>
     </div>
-
-    {% include footer.html %}
 
   </body>
 

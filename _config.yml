@@ -1,11 +1,9 @@
 # Site settings
-title: blog
-email: biaopiao@gmail.com
+title: Blog | Shaoting Gu
 description: > # this means to ignore newlines until "baseurl:"
-  Shaoting Gu | designer & developer
+  Shaoting Gu's blog
 baseurl: "/blog" # the subpath of your site, e.g. /blog/
 url: "http://gushaoting.com" # the base hostname & protocol for your site
-github_username:  biaopiao
 
 # Build settings
 markdown: kramdown

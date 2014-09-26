@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?42454535');
+  src: url('../fonts/fontello.eot?42454535#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?42454535') format('woff'),
+       url('../fonts/fontello.ttf?42454535') format('truetype'),
+       url('../fonts/fontello.svg?42454535#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::selection { background:#333333; color:#f9f9f9;}
+/* mozilla firefox */
+::-moz-selection { background:#333333; color:#f9f9f9;}
+
+::-webkit-scrollbar {
+      width: 15px;
+}
+
+::-webkit-scrollbar-track {
+      background-color: #f9f9f9;
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1); 
+} /* this will style the thumb, ignoring the track */
+ 
+::-webkit-scrollbar-button {
+      background-color: #f3f3f3;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+::-webkit-scrollbar-corner {
+      background-color: black;
+} 
+
+/* web css*/
+*{
+    font-family: Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+    -webkit-font-smoothing:antialiased;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fcfcfc;
+}
+
+.sidebar {
+    position: fixed;
+    width: 8em;
+    background-color: #ffffff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#sidebar-wrapper {
+    text-align: center;
+    color: #333333;
+    text-decoration: none;
+}
+
+.sidebar .nav {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    color: #dbdbdb;
+}
+
+.sidebar .nav:hover {
+    background-color: #f9f9f9;
+    color: #e54545;
+    cursor: pointer;
+}
+
+.sidebar #name {
+    position: absolute;
+    bottom: 3em;
+    left: 5.4em;
+    font-size: 0.7em;
+    line-height: 140%;
+}
+
+.page-content {
+    float: left;
+    margin-top: 0;
+}
+
+.wrapper {
+    max-width: 50em;
+    min-width: 30em;
+
+    margin-left: 8em;
+}
+
+.title {
+    font-size: 1.4em;
+    margin-bottom: 2em;
+}
+
+.posts {
+    margin: 5em 5em 0em 5em;
+    line-height: 220%;
+}
+
+.post {
+    padding-top: 1em;
+}
+
+.line {
+    text-align: center;
+    margin: 7em auto;
+}
+
+.archive-content {
+    display: none;
+    position: fixed;
+    width: 30em;
+    background-color: #fafafa;  
+    top: 0;
+    overflow-y: auto;
+    bottom: 0;
+}
+
+.content {
+    position: relative;
+    margin-top: 5em;
+    margin-left: 10em;
+}
+
+a:link { 
+  text-decoration: none;
+  color: #333333;
+}
+
+a:visited { 
+  text-decoration: none;
+  color: #333333;
+}
+
+a:hover { 
+  color: #e54545;
+} 
+
+.post-title {
+  font-size: 1.2em;
+  line-height: 160%;
+  font-weight: normal;
+  margin-left: 2em;
+}
+
+.post-title:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -8em;
+  margin-top: -2em;
+  transition: .4s;
+  height: 3px;
+  width: 3px;
+  border: 3px solid transparent;
+  -webkit-transform: rotate(-135deg) skew(-10deg, -10deg);
+  -moz-transform: rotate(-135deg) skew(-10deg, -10deg);
+  transform: rotate(-135deg) skew(-10deg, -10deg);
+}
+
+.post-title:hover:before {
+  margin-top: 0.35em;
+  border-bottom-color: #e54545;
+  border-left-color: #e54545;
+}
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  font-size: 200%; 
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-home:before { content: '\e802'; } /* '' */
+.icon-archive:before { content: '\e803'; } /* '' */
